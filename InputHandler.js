@@ -1,203 +1,38 @@
 export class INPUTHANDLER {
   constructor(type) {
     this.inputype = type;
-    // this.keys = {
-    //   w: {
-    //     pressed: false,
-    //   },
-    //   a: {
-    //     pressed: false,
-    //   },
-    //   s: {
-    //     pressed: false,
-    //   },
-    //   q: {
-    //     pressed: false,
-    //   },
-    //   e: {
-    //     pressed: false,
-    //   },
-    //   r: {
-    //     pressed: false,
-    //   },
-    //   t: {
-    //     pressed: false,
-    //   },
-    //   y: {
-    //     pressed: false,
-    //   },
-    //   u: {
-    //     pressed: false,
-    //   },
-    //   i: {
-    //     pressed: false,
-    //   },
-    //   o: {
-    //     pressed: false,
-    //   },
-    //   p: {
-    //     pressed: false,
-    //   },
-    //   d: {
-    //     pressed: false,
-    //   },
-    //   f: {
-    //     pressed: false,
-    //   },
-    //   g: {
-    //     pressed: false,
-    //   },
-    //   h: {
-    //     pressed: false,
-    //   },
-    //   j: {
-    //     pressed: false,
-    //   },
-    //   k: {
-    //     pressed: false,
-    //   },
-    //   l: {
-    //     pressed: false,
-    //   },
-    //   z: {
-    //     pressed: false,
-    //   },
-    //   x: {
-    //     pressed: false,
-    //   },
-    //   c: {
-    //     pressed: false,
-    //   },
-    //   v: {
-    //     pressed: false,
-    //   },
-    //   b: {
-    //     pressed: false,
-    //   },
-    //   n: {
-    //     pressed: false,
-    //   },
-    //   m: {
-    //     pressed: false,
-    //   },
-    //   1: {
-    //     pressed: false,
-    //   },
-    //   2: {
-    //     pressed: false,
-    //   },
-    //   3: {
-    //     pressed: false,
-    //   },
-    //   4: {
-    //     pressed: false,
-    //   },
-    //   5: {
-    //     pressed: false,
-    //   },
-    //   6: {
-    //     pressed: false,
-    //   },
-    //   7: {
-    //     pressed: false,
-    //   },
-    //   8: {
-    //     pressed: false,
-    //   },
-    //   9: {
-    //     pressed: false,
-    //   },
-    //   0: {
-    //     pressed: false,
-    //   },
-
-    // };
+  
     this.keys = new Map();
-    // this.keys.set('y', 39);
 
-    // this.keys = {};
-
-  }
-  addkeys(key) {
+}
+// adds an event listener to its parameter
+addkeys(key) {
     this.keys.set(key, false);
 
     window.addEventListener("keydown", (e) => {
-      // this.#setKeys(e.key,key);
       let key1 = key;
       if(e.key === key1){
-        // let b = e.key
-        // let a= {`${b}`: true}
-        // this.keys.push(a) ;
-        // this.keys = true;
       this.keys.set(key, true);
-      // console.log(this)
 
       }
     });
 
     window.addEventListener("keyup", (e) => {
-      // this.#resetKeys(e.key);
-      // this.keys = false;
       this.keys.set(key, false);
 
     });
-    // return {a:this.keys.has('y'),b:this.keys} 
-    // return this.keys.get('y');
-    // this.#getkeys();
-
-    // return  this.keys.get(key)
-    // this.#setKeys(this.keys.get(key))
-
-    // let a = this.keys
-    // return  a
   }
 
-  #setKeys(key) {
-    // console.log(typeof key)
-    // this.keys
-    // this.keys.key.pressed = true;
-    // this.keys.set(key, true);
-    // console.log(this.keys.get(key))
-    // console.log(this.keys)
-
-    // switch (key) {
-    //   case "w":
-    //     this.keys.w.pressed = true;
-    //     break;
-    //   case "a":
-    //     this.keys.a.pressed = true;
-    //     break;
-    //   case "s":
-    //     this.keys.s.pressed = true;
-    //     break;
-    // }
-  }
-
+ 
+  // returns a value from 'keys' MAP. 
   getKey(key) {
     return this.keys.get(key)
 
   }
-  // #getkeys(){
-  //   return this.keys
 
-  // }
-
-  #resetKeys(key) {
-    switch (key) {
-      case "w":
-        this.keys.w.pressed = false;
-        break;
-      case "a":
-        this.keys.a.pressed = false;
-        break;
-      case "s":
-        this.keys.s.pressed = false;
-        break;
-    }
-  }
 }
 
-class JoystickController {
+export class JoystickController {
   // stickID: ID of HTML element (representing joystick) that will be dragged
   // maxDistance: maximum amount joystick can move in any direction
   // deadzone: joystick must move at least this amount from origin to register value change
@@ -323,6 +158,7 @@ export class JOYSTICK {
     this.controller = new JoystickController("stick2", this.maxDistance, 18);
   }
 
+  // Creates a joystick in the DOM 
   #create(w, h, w1, h1) {
     const body = document.querySelector("body");
 
@@ -333,7 +169,7 @@ export class JOYSTICK {
     body.appendChild(stick1);
 
     const img = document.createElement("img");
-    img.src = "img/buttons/Circle.png";
+    img.src = "https://i.ibb.co/jZvNs4N/Circle.png";
     img.style = "width: 100%; height: 100%;";
 
     stick1.appendChild(img);
@@ -358,7 +194,7 @@ export class JOYSTICK {
     stick1.appendChild(stick2);
 
     const img1 = document.createElement("img");
-    img1.src = "img/buttons/joystick-red.png";
+    img1.src = "https://i.ibb.co/VS7VGpZ/joystick-red.png";
     img1.style = "width: 100%;";
 
     stick2.appendChild(img1);

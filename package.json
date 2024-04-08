@@ -1,0 +1,20 @@
+{
+  "name": "2dgameinputs",
+  "version": "1.2.0",
+  "type": "module",
+  "description": "a 2d game input handler",
+  "main": "InputHandler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphayo-the-developer/INPUTHANDLER.git"
+  },
+  "author": "alphayo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alphayo-the-developer/INPUTHANDLER/issues"
+  },
+  "homepage": "https://github.com/alphayo-the-developer/INPUTHANDLER#readme"
+}
